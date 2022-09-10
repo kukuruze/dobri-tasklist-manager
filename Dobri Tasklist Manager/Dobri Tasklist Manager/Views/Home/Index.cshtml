@@ -1,37 +1,31 @@
 ﻿@model Dobri_Tasklist_Manager.Models.User
 
 @{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "Login";
 }
 
-<div align="center">
-    <form method="post" asp-action="LogIn">
-        <div class="container">
-            <div align="center">
-                <b>
-                    <label type="text" style="font-size: 40px; text-align: center">
-                        Login
-                    </label>
-                </b>
-            </div>
-            <input asp-for="Username" class="form-control" placeholder="Username" required />
-            <span asp-validation-for="Username" class="text-danger"></span>
-
-            <input asp-for="Password" class="form-control" placeholder="Password" type="password" required />
-            <span asp-validation-for="Password" class="text-danger"></span>
-
-            <button type="submit" asp-controller="Home" asp-action="LogIn" style="background-color:cyan; font-size:25px">Login</button>
-            <label>
-                <input type="checkbox" checked="checked" name="remember"> Remember me
-            </label>
-        </div>
-
-        <div class="container">
-            <p align="left">
-                <button type="submit" asp-controller="Home" asp-action="LogIn" class="cancelbtn">Cancel</button>
-
-                <span class="psw"><a asp-controller="Home" asp-action="ForgotPassword" style="font-size: 20px">Forgot password?</a></span>
-            </p>
-        </div>
-    </form>
+<h1>@ViewData["Title"]</h1>
+<div class="row">
+    <div class="col-md-4">
+        <section>
+            <form id="account" method="post" asp-action="LogIn">
+                <div asp-validation-summary="All" class="text-danger"></div>
+                <div class="form-group">
+                    <label asp-for="Username"></label>
+                    <input asp-for="Username" class="form-control" />
+                    <span asp-validation-for="Username" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Password"></label>
+                    <input asp-for="Password" class="form-control" type="password" />
+                    <span asp-validation-for="Password" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <button type="submit" class="btn btn-primary" asp-controller="Home" asp-action="LogIn">Log in</button>
+                </div>
+            </form>
+        </section>
+    </div>
+    <img src="https://cdn.discordapp.com/attachments/914217140452737115/1014924423935049859/dobrev_shegata.png" alt="Simply Easy Learning" width="393" height="466" class="center">
 </div>
+
