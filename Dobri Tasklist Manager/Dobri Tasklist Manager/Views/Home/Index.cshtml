@@ -1,0 +1,37 @@
+﻿@model Dobri_Tasklist_Manager.Models.User
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div align="center">
+    <form method="post" asp-action="LogIn">
+        <div class="container">
+            <div align="center">
+                <b>
+                    <label type="text" style="font-size: 40px; text-align: center">
+                        Login
+                    </label>
+                </b>
+            </div>
+            <input asp-for="Username" class="form-control" placeholder="Username" required />
+            <span asp-validation-for="Username" class="text-danger"></span>
+
+            <input asp-for="Password" class="form-control" placeholder="Password" type="password" required />
+            <span asp-validation-for="Password" class="text-danger"></span>
+
+            <button type="submit" asp-controller="Home" asp-action="LogIn" style="background-color:cyan; font-size:25px">Login</button>
+            <label>
+                <input type="checkbox" checked="checked" name="remember"> Remember me
+            </label>
+        </div>
+
+        <div class="container">
+            <p align="left">
+                <button type="submit" asp-controller="Home" asp-action="LogIn" class="cancelbtn">Cancel</button>
+
+                <span class="psw"><a asp-controller="Home" asp-action="ForgotPassword" style="font-size: 20px">Forgot password?</a></span>
+            </p>
+        </div>
+    </form>
+</div>
