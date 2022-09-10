@@ -56,6 +56,11 @@ namespace Dobri_Tasklist_Manager.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("Id,FirstName,LastName,Username,Password,DateOfCreation,DateOfLastEdit,IdLastEditor,IdCreator,ListsCreatedByMe,ListsSharedWithMe")] User user)
         {
+            user.DateOfCreation = DateTime.Now;
+            user.DateOfLastEdit = DateTime.Now;
+            user.IdLastEditor = Active.CurrentUserId;
+            user.IdCreator = Active.CurrentUserId;
+
             if (ModelState.IsValid)
             {
                 _context.Add(user);
@@ -88,6 +93,8 @@ namespace Dobri_Tasklist_Manager.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("Id,FirstName,LastName,Username,Password,DateOfCreation,DateOfLastEdit,IdLastEditor,IdCreator,ListsCreatedByMe,ListsSharedWithMe")] User user)
         {
+            user.DateOfLastEdit = DateTime.Now;
+            user.IdLastEditor = Active.CurrentUserId;
             if (id != user.Id)
             {
                 return NotFound();

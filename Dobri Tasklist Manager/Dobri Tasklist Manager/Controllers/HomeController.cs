@@ -60,6 +60,14 @@ namespace Dobri_Tasklist_Manager.Controllers
             return RedirectToAction("Index");
         }
 
+        public IActionResult Logout()
+        {
+            Active.IsLogged = false;
+            Active.CurrentUserId = -1;
+            Active.IsAdmin = false;
+            return RedirectToAction("Index");
+        }
+
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {

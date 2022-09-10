@@ -161,3 +161,4 @@ D:\Git proekti\dobri-tasklist-manager\Dobri Tasklist Manager\Dobri Tasklist Mana
 D:\Git proekti\dobri-tasklist-manager\Dobri Tasklist Manager\Dobri Tasklist Manager\obj\Debug\netcoreapp3.1\Razor\Views\ToDo\Details.cshtml.g.cs
 D:\Git proekti\dobri-tasklist-manager\Dobri Tasklist Manager\Dobri Tasklist Manager\obj\Debug\netcoreapp3.1\Razor\Views\ToDo\Edit.cshtml.g.cs
 D:\Git proekti\dobri-tasklist-manager\Dobri Tasklist Manager\Dobri Tasklist Manager\obj\Debug\netcoreapp3.1\Razor\Views\ToDo\Index.cshtml.g.cs
+D:\Git proekti\dobri-tasklist-manager\Dobri Tasklist Manager\Dobri Tasklist Manager\obj\Debug\netcoreapp3.1\Razor\Views\TaskLists\Share.cshtml.g.cs

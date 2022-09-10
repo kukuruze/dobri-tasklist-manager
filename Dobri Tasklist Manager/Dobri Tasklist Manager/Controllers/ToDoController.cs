@@ -22,7 +22,7 @@ namespace Dobri_Tasklist_Manager.Controllers
         // GET: ToDo
         public async Task<IActionResult> Index()
         {
-            return View(await _context.ToDos.ToListAsync());
+            return View(await _context.ToDos.Where(x => x.IdTaskList == Active.CurrentTaskListId).ToListAsync());
         }
 
         // GET: ToDo/Details/5
@@ -56,6 +56,10 @@ namespace Dobri_Tasklist_Manager.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("Id,IdTaskList,Name,Description,IsCompleted,DateOfCreation,DateOfLastChange,IdCreator,IdLastEditor")] ToDo toDo)
         {
+            toDo.DateOfCreation = DateTime.Now;
+            toDo.DateOfLastChange = DateTime.Now;
+            toDo.IdLastEditor = Active.CurrentUserId;
+            toDo.IdCreator = Active.CurrentUserId;
             if (ModelState.IsValid)
             {
                 _context.Add(toDo);
@@ -88,6 +92,8 @@ namespace Dobri_Tasklist_Manager.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("Id,IdTaskList,Name,Description,IsCompleted,DateOfCreation,DateOfLastChange,IdCreator,IdLastEditor")] ToDo toDo)
         {
+            toDo.DateOfLastChange = DateTime.Now;
+            toDo.IdLastEditor = Active.CurrentUserId;
             if (id != toDo.Id)
             {
                 return NotFound();

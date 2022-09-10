@@ -17,6 +17,10 @@ namespace Dobri_Tasklist_Manager
     {
         public Startup(IConfiguration configuration)
         {
+            Active.CurrentTaskListId = -1;
+            Active.CurrentUserId = -1;
+            Active.IsAdmin = false;
+            Active.IsLogged = false;
             Configuration = configuration;
         }
 

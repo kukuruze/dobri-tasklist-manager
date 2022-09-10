@@ -53,14 +53,14 @@
                 <span asp-validation-for="IdCreator" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="ListsCreatedByMe" class="control-label"></label>
-                <input asp-for="ListsCreatedByMe" class="form-control" />
-                <span asp-validation-for="ListsCreatedByMe" class="text-danger"></span>
+                <label asp-for="ListsCreatedByMe" class="control-label" readonly="readonly" ></label>
+                <input asp-for="ListsCreatedByMe" class="form-control" readonly="readonly" />
+                <span asp-validation-for="ListsCreatedByMe" class="text-danger" readonly="readonly" ></span>
             </div>
             <div class="form-group">
-                <label asp-for="ListsSharedWithMe" class="control-label"></label>
-                <input asp-for="ListsSharedWithMe" class="form-control" />
-                <span asp-validation-for="ListsSharedWithMe" class="text-danger"></span>
+                <label asp-for="ListsSharedWithMe" class="control-label" readonly="readonly"></label>
+                <input asp-for="ListsSharedWithMe" class="form-control" readonly="readonly" />
+                <span asp-validation-for="ListsSharedWithMe" class="text-danger" readonly="readonly" ></span>
             </div>
             <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-primary" />
